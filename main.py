@@ -1,11 +1,11 @@
-from classes import create_class, delete_class, list_classes, class_details
+from classes import create_class, delete_class, list_classes, class_details, general_stats
 from students import create_student, add_student_to_class, remove_student_from_class, list_students_of_class, \
-    student_details
+    student_details, add_grade, student_average, class_average
 
 
 def main_menu():
     while True:
-        print("\n= GESTION DE L’ÉCOLE =")
+        print("\n=== GESTION DE L’ÉCOLE ===")
         print("1. Créer une classe")
         print("2. Supprimer une classe")
         print("3. Lister toutes les classes")
@@ -15,6 +15,10 @@ def main_menu():
         print("7. Retirer un étudiant d'une classe")
         print("8. Lister les étudiants d'une classe")
         print("9. Détails d'un étudiant")
+        print("10. Ajouter une note à un étudiant")
+        print("11. Moyenne d'un étudiant")
+        print("12. Moyenne d'une classe")
+        print("13. Statistiques générales")
         print("0. Quitter")
         choice = input("Choisissez une option : ")
 
@@ -36,6 +40,14 @@ def main_menu():
             list_students_of_class()
         elif choice == "9":
             student_details()
+        elif choice == "10":
+            add_grade()
+        elif choice == "11":
+            student_average()
+        elif choice == "12":
+            class_average()
+        elif choice == "13":
+            general_stats()
         elif choice == "0":
             print("Au revoir !")
             break

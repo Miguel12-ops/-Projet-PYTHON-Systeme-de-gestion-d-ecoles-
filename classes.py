@@ -1,4 +1,5 @@
 from data import classes, students
+from data import grades
 
 def create_class():
     class_id = input("Entrez l'ID de la classe : ")
@@ -45,3 +46,13 @@ def class_details():
                 print(f" - {sid} : (données manquantes)")
     else:
         print("Aucun étudiant inscrit.")
+
+def general_stats():
+    total_classes = len(classes)
+    total_students = len(students)
+    total_students_with_grades = sum(1 for s in students if s in grades and len(grades[s]) > 0)
+    print("\n Statistiques générales :")
+    print(f"Nombre de classes : {total_classes}")
+    print(f"Nombre d’étudiants : {total_students}")
+    print(f"Étudiants avec des notes : {total_students_with_grades}")
+
